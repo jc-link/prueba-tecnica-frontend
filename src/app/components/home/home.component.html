@@ -1,0 +1,30 @@
+<header>
+    <button (click)="logout()">Logout</button>
+  </header>
+  
+  <div class="container">
+    <div class="upload-section">
+      <input type="file" (change)="onFileSelected($event)">
+      <button (click)="uploadFile()">Subir Archivo</button>
+    </div>
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>RUT</th>
+            <th>Dirección</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.rut }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
